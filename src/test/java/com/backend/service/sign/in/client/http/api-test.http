@@ -1,0 +1,46 @@
+POST {{sign-in-service}}/sign-in
+Content-Type: application/json
+Accept: application/json
+X-RequestId: {{$uuid}}
+
+{
+  "email": "vvvorotnik@gmail.com"
+}
+
+> {%
+    client.test("Send otp", function() {
+    client.assert(response.status === 200, "Response status must be 200");
+    client.assert(response.headers.valueOf("X-RequestId") !== null, "RequestId must not be empty");
+
+    client.global.set("signInId", response.body.id);
+  });
+%}
+
+###
+
+POST {{sign-in-service}}/sign-in/otp
+Content-Type: application/json
+Accept: application/json
+X-RequestId: {{$uuid}}
+
+{
+  "id": "{{signInId}}",
+  "otp": "3329"
+}
+
+> {%
+    client.test("Check otp", function() {
+    client.assert(response.status === 204, "Response status must be 204");
+    client.assert(response.headers.valueOf("X-RequestId") !== null, "RequestId must not be empty");
+    });
+%}
+
+###
+
+GET {{sign-in-service-actuator}}/sign-in-service/actuator/info
+
+###
+
+GET {{sign-in-service-actuator}}/sign-in-service/actuator/health
+
+###
