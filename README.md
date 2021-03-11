@@ -26,8 +26,8 @@ APPLICATION_OTP_LENGTH|4|Length of otp, default 4 digits
 APPLICATION_OTP_TTL|180s|Duration of otp, default 3 minutes 
 APPLICATION_EMAIL_API_KEY|<apiKey>|Api key which needs for authentication when calling sendgrid endpoint
 APPLICATION_EMAIL_SUBJECT|Verification code|Email subject
-APPLICATION_EMAIL_FROM_EMAIL|vvvorotnik@ukr.net|Sender's email
-APPLICATION_EMAIL_FROM_NAME|Volodymyr Vorotnikov|Sender's name
+APPLICATION_EMAIL_FROM_EMAIL|v********@***.net|Sender's email
+APPLICATION_EMAIL_FROM_NAME|Vol****** V*****ov|Sender's name
 
 ## Test project
 ```
