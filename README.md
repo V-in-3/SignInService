@@ -7,9 +7,9 @@ Service has swagger-ui definition endpoints.<br />
 
 ## Available endpoints
 
-- `POST http://localhost:8080/sign-in` - send otp
-- `POST http://localhost:8080/sign-in/otp` - check otp
-- `GET  http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config` - swagger
+- `POST http://localhost:8088/sign-in` - send otp
+- `POST http://localhost:8088/sign-in/otp` - check otp
+- `GET  http://localhost:8088/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config` - swagger
 - `GET  http://localhost:8081/sign-in-service/actuator/health` - for health checking
 - `GET  http://localhost:8081/sign-in-service/actuator/info` - with some service info
 

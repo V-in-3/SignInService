@@ -12,5 +12,6 @@ import java.lang.annotation.*;
 @ApiDefaultResponse
 @ApiResponseOk("Otp was sent successfully")
 @ApiResponseUnprocessableEntity("In case the validation check failed")
+@ApiResponseNotFound("In case the validation check not found")
 public @interface ApiOpSendOtp {
 }

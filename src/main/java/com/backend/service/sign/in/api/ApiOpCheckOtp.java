@@ -12,5 +12,6 @@ import java.lang.annotation.*;
 @ApiDefaultResponse
 @ApiResponseNoContent("Otp was checked successfully")
 @ApiResponseUnprocessableEntity("In case the validation check failed")
+@ApiResponseNotFound("In case the validation check not found")
 public @interface ApiOpCheckOtp {
 }

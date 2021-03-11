@@ -61,8 +61,12 @@ public class DefaultSignInService implements SignInService {
     }
 
     private void verifyOtp(SignIn signIn, String otp) {
-        if (isOtpExpired(signIn) || isOtpInCorrect(signIn, otp)) {
-            log.error("Otp '{}' is incorrect or expired for SignInId {}", otp, signIn.getId());
+        if (isOtpExpired(signIn)) {
+            log.error("Otp '{}' is expired for SignInId {}", otp, signIn.getId());
+            throw ApiException.badRequest("otp.incorrect");
+        }
+        if (isOtpInCorrect(signIn, otp)) {
+            log.error("Otp '{}' is incorrect SignInId {}", otp, signIn.getId());
             throw ApiException.badRequest("otp.incorrect");
         }
     }

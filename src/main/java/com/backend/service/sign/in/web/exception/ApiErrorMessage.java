@@ -21,7 +21,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
  * <br/>
  * <pre>
  * {
- *    "timestamp": "2017-10-20T13:36:04.859Z",
+ *    "timestamp": "2020-10-20T13:36:04.859Z",
  *    "status": 400,
  *    "error": "Bad request",
  *    "message": "Validation failed",
@@ -54,6 +54,8 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
                 "   \"path\": \"/path\"\n" +
                 "}"
 )
+
+
 @JsonInclude(NON_EMPTY)
 @JsonPropertyOrder({"timestamp", "status", "error", "message", "path", "errors"})
 @Data

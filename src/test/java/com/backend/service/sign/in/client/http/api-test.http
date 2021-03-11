@@ -16,7 +16,8 @@ X-RequestId: {{$uuid}}
   });
 %}
 
-###
+### The value "otp" must be entered after performing the previous test POST {{sign-in-service}}/sign-in
+### 4-bit code will come to the email. it will need to be entered in the  field "otp": "4-bit_code"
 
 POST {{sign-in-service}}/sign-in/otp
 Content-Type: application/json
@@ -24,12 +25,12 @@ Accept: application/json
 X-RequestId: {{$uuid}}
 
 {
-  "id": "{{signInId}}",
-  "otp": "3329"
+   "id": "{{signInId}}",
+   "otp": "6734"
 }
 
 > {%
-    client.test("Check otp", function() {
+    client.test("Check otp", function(){
     client.assert(response.status === 204, "Response status must be 204");
     client.assert(response.headers.valueOf("X-RequestId") !== null, "RequestId must not be empty");
     });

@@ -1,8 +1,9 @@
-create table sign_ins (
-  id                      varchar2(36)        not null constraint sign_ins primary key,
+
+CREATE TABLE IF NOT EXISTS sign_ins (
+  id                      varchar(36)        not null constraint sign_ins primary key,
   version                 smallint,
-  email                   varchar2(255 char),
-  otp                     varchar2(10)        not null,
-  created_at              timestamp           not null,
-  otp_sent_at             timestamp           not null
+  email                   varchar(255),
+  otp                     varchar(10)        not null,
+  created_at              timestamp          not null,
+  otp_sent_at             timestamp          not null
 );

@@ -11,7 +11,7 @@ application:
     subject: Verification code
     from:
       email: vvvorotnik@ukr.net
-      name: Volodymyr Vorotnikov
+      name:  Volodymyr Vorotnikov
 
 springdoc:
   default-produces-media-type: application/json
@@ -37,6 +37,11 @@ management:
 spring:
   main:
     banner-mode: off
+  datasource:
+    url: jdbc:postgresql://192.168.0.111:5432/postgres
+    username: postgres
+    password: password
+
 
   application:
     name: ^project.name^
@@ -50,14 +55,16 @@ spring:
     open-in-view: false
     properties:
       hibernate:
+        enabled: true
         order_inserts: true
         order_updates: true
+        ddl-auto: validate
         jdbc:
           batch_size: 20
           fetch_size: 20
           batch_versioned_data: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
 
   mvc:
     throw-exception-if-no-handler-found: true
@@ -78,6 +85,7 @@ spring:
 server:
   forward-headers-strategy: framework
   shutdown: graceful
+  port: 8088
 
 logging:
   level:
