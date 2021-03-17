@@ -38,7 +38,8 @@ spring:
   main:
     banner-mode: off
   datasource:
-    url: jdbc:postgresql://192.168.0.111:5432/postgres
+#    url: jdbc:postgresql://host.docker.internal:5433/postgres
+    url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: password
 
@@ -58,7 +59,6 @@ spring:
         enabled: true
         order_inserts: true
         order_updates: true
-        ddl-auto: validate
         jdbc:
           batch_size: 20
           fetch_size: 20
